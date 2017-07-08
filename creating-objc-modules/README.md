@@ -1,4 +1,4 @@
-# Mach-O Executables
+# Creating Objc Modules
 
 This is my note for below articles
 - http://drekka.ghost.io/creating-objective-c-modules/
