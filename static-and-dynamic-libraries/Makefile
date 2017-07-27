@@ -13,5 +13,11 @@ test_dynamic: libfoo_dynamic.dylib main.o
 show_clang_ld: libfoo_dynamic.dylib main.o
 	clang -v main.o  -L. -lfoo_dynamic -o test_dynamic
 
+libfoo_static.a: bar.o
+	libtool -static bar.o -o libfoo_static.a 
+
+test_static: libfoo_static.a main.o
+	ld main.o -framework CoreFoundation -lSystem -L. -lfoo_static -o test_static -L/System/Library/Frameworks  -arch x86_64 -macosx_version_min 10.12.0
+
 clean:
-	rm *.o *.dylib test_dynamic
+	rm *.o *.dylib *.a test_dynamic test_static
