@@ -1,0 +1,4 @@
+module Hoge {
+       header "Hoge.h"
+       export *
+}
